@@ -59,7 +59,7 @@
                             </router-link>
                         </span>
                         <span class="info-item">
-                            泡泡&nbsp;&nbsp;{{ prettyQuoteNum(store.state.userInfo.tweets_count) }}
+                            帖子&nbsp;&nbsp;{{ prettyQuoteNum(store.state.userInfo.tweets_count) }}
                         </span>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
             </div>
             <!-- </n-spin> -->
             <n-tabs class="profile-tabs-wrap" type="line" animated @update:value="changeTab">
-                <n-tab-pane name="post" tab="泡泡"></n-tab-pane>
+                <n-tab-pane name="post" tab="发送"></n-tab-pane>
                 <n-tab-pane name="comment" tab="评论"></n-tab-pane>
                 <n-tab-pane name="highlight" tab="亮点"></n-tab-pane>
                 <n-tab-pane name="media" tab="图文"></n-tab-pane>

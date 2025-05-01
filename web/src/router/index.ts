@@ -14,7 +14,7 @@ const routes = [
     path: '/post',
     name: 'post',
     meta: {
-      title: '泡泡详情',
+      title: '详情',
     },
     component: () => import('@/views/Post.vue'),
   },
@@ -118,7 +118,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  document.title = `${to.meta.title} | 泡泡 - 一个清新文艺的微社区`;
+  document.title = `${to.meta.title} | Paper - 清新社区`;
   next();
 });
 
