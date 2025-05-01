@@ -181,7 +181,7 @@ const user = reactive<Item.UserInfo>({
 });
 const inActionPost = ref<Item.PostProps | null>(null);
 
-const title = ref<string>('泡泡广场');
+const title = ref<string>('Paper Home');
 const loading = ref(false);
 const noMore = ref(false);
 const targetStyle = ref<number>(1);
@@ -301,7 +301,7 @@ function postFollowAction(userId: number, isFollowing: boolean) {
 }
 
 const updateTitle = () => {
-  title.value = '泡泡广场';
+  title.value = 'Paper Home';
   if (route.query && route.query.q) {
     if (route.query.t && route.query.t === 'tag') {
       title.value = '#' + decodeURIComponent(route.query.q as string);
