@@ -312,6 +312,10 @@ type WebProfileConf struct {
 	CopyrightRightLink        string `json:"copyright_right_link"`
 }
 
+type localFrontend struct {
+	Dir string
+}
+
 func (s *httpServerConf) GetReadTimeout() time.Duration {
 	return s.ReadTimeout * time.Second
 }

@@ -178,6 +178,8 @@ Sqlite3: # Sqlite3数据库
 Redis:
   InitAddress:
   - redis:6379
+LocalFrontend:
+  Dir: web/dist
 WebProfile:
   UseFriendship: true              # 前端是否使用好友体系
   EnableTrendsBar: false           # 广场页面是否开启动态条栏功能

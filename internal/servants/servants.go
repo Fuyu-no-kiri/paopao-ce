@@ -10,6 +10,7 @@ import (
 	"github.com/rocboss/paopao-ce/internal/servants/admin"
 	"github.com/rocboss/paopao-ce/internal/servants/bot"
 	"github.com/rocboss/paopao-ce/internal/servants/docs"
+	"github.com/rocboss/paopao-ce/internal/servants/frontend"
 	"github.com/rocboss/paopao-ce/internal/servants/localoss"
 	"github.com/rocboss/paopao-ce/internal/servants/mobile"
 	"github.com/rocboss/paopao-ce/internal/servants/space"
@@ -25,6 +26,9 @@ func RegisterWebServants(e *gin.Engine) {
 	})
 	cfg.Be("LocalOSS", func() {
 		localoss.RouteLocalOSS(e)
+	})
+	cfg.Be("Frontend:Local", func() {
+		frontend.RouteLocalFrontend(e)
 	})
 	web.RouteWeb(e)
 }
