@@ -1,17 +1,8 @@
 <div id="top"></div>
 
-<!-- PROJECT SHIELDS -->
-[![Go](https://github.com/rocboss/paopao-ce/actions/workflows/go.yml/badge.svg)](https://github.com/rocboss/paopao-ce/actions/workflows/go.yml)
-[![Go Report Card][goreport-shield]][goreport-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![MIT License][license-shield]][license-url]
-[![Contributors][contributors-shield]][contributors-url]
-[![Sourcegraph](https://img.shields.io/badge/view%20on-Sourcegraph-brightgreen.svg)](https://sourcegraph.com/github.com/rocboss/paopao-ce)
-
 <!-- PROJECT LOGO -->
 <div align="center">
-  <a href="https://github.com/rocboss/paopao-ce">
+  <a href="[https://github.com/rocboss/paopao-ce]">
     <img src="https://cdn.rocs.me/static/paopao-logo.png" alt="Logo" width="80" height="80">
   </a>
 
