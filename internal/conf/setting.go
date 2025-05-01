@@ -178,9 +178,7 @@ type alipayConf struct {
 
 type smsJuheConf struct {
 	Gateway string
-	Key     string
-	TplID   string
-	TplVal  string
+	AppCode string
 }
 
 type tweetSearchConf struct {
