@@ -23,22 +23,23 @@ type juhePhoneCaptchaRsp struct {
 
 type juheSmsServant struct {
 	gateway string
-	key     string
-	tplID   string
-	tplVal  string
+	appCode string
 }
 
 // SendPhoneCaptcha 发送短信验证码
 func (s *juheSmsServant) SendPhoneCaptcha(phone string, captcha string, expire time.Duration) error {
 	client := resty.New()
 	client.DisableWarn = true
-	resp, err := client.R().
-		SetFormData(map[string]string{
-			"mobile":    phone,
-			"tpl_id":    s.tplID,
-			"tpl_value": fmt.Sprintf(s.tplVal, captcha, expire),
-			"key":       s.key,
-		}).Post(s.gateway)
+	request := client.R()
+
+	request.SetHeader("Authorization", "APPCODE "+s.appCode)
+	request.SetFormData(map[string]string{
+		"mobile":    phone,
+		"content":   fmt.Sprintf("【智能云】您的验证码是%s。如非本人操作，请忽略本短信", captcha),
+		"signature": "【签名】清新社区",
+	})
+
+	resp, err := request.Post(s.gateway)
 	if err != nil {
 		return err
 	}
@@ -59,8 +60,6 @@ func (s *juheSmsServant) SendPhoneCaptcha(phone string, captcha string, expire t
 func newJuheSmsServant() *juheSmsServant {
 	return &juheSmsServant{
 		gateway: conf.SmsJuheSetting.Gateway,
-		key:     conf.SmsJuheSetting.Key,
-		tplID:   conf.SmsJuheSetting.TplID,
-		tplVal:  conf.SmsJuheSetting.TplVal,
+		appCode: conf.SmsJuheSetting.AppCode,
 	}
 }
