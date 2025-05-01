@@ -61,10 +61,8 @@ MobileServer: # 移动端grpc api服务
   Host: 0.0.0.0
   Port: 8020
 SmsJuhe:
-  Gateway: https://v.juhe.cn/sms/send
-  Key:
-  TplID:
-  TplVal: "#code#=%s&#m#=%d"
+  Gateway: https://zwp.market.alicloudapi.com/sms/sendv2
+  AppCode: 123
 Alipay: 
   AppID:
   InProduction: True
