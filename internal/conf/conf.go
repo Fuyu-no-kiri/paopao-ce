@@ -60,6 +60,7 @@ var (
 	JWTSetting              *jwtConf
 	WebProfileSetting       *WebProfileConf
 	LocalFrontend           *localFrontend
+	TlsSetting              *tlsConfig
 )
 
 func setupSetting(suite []string, noDefault bool) error {
@@ -123,6 +124,7 @@ func setupSetting(suite []string, noDefault bool) error {
 		"S3":                &S3Setting,
 		"WebProfile":        &WebProfileSetting,
 		"LocalFrontend":     &LocalFrontend,
+		"Tls":               &TlsSetting,
 	}
 	for k, v := range objects {
 		err := vp.UnmarshalKey(k, v)

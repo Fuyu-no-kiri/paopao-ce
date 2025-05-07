@@ -316,6 +316,11 @@ type localFrontend struct {
 	Dir string
 }
 
+type tlsConfig struct {
+	CertFile string
+	KeyFile  string
+}
+
 func (s *httpServerConf) GetReadTimeout() time.Duration {
 	return s.ReadTimeout * time.Second
 }

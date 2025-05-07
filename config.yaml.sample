@@ -178,6 +178,9 @@ Redis:
   - redis:6379
 LocalFrontend:
   Dir: web/dist
+Tls:
+  CertFile: tls.cert
+  KeyFile: tls.key
 WebProfile:
   UseFriendship: true              # 前端是否使用好友体系
   EnableTrendsBar: false           # 广场页面是否开启动态条栏功能

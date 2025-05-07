@@ -6,6 +6,8 @@ package service
 
 import (
 	"context"
+	"github.com/alimy/tryst/cfg"
+	"github.com/rocboss/paopao-ce/internal/conf"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -24,7 +26,11 @@ type httpServer struct {
 }
 
 func (s *httpServer) start() error {
-	return s.server.ListenAndServe()
+	if cfg.If("Tls") {
+		return s.server.ListenAndServeTLS(conf.TlsSetting.CertFile, conf.TlsSetting.KeyFile)
+	} else {
+		return s.server.ListenAndServe()
+	}
 }
 
 func (s *httpServer) stop() error {
