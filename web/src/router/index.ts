@@ -118,7 +118,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  document.title = `${to.meta.title} | Paper - 清新社区`;
+  document.title = `${to.meta.title} | Sxlt - 清新社区`;
   next();
 });
 
