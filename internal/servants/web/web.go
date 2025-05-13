@@ -33,6 +33,7 @@ func RouteWeb(e *gin.Engine) {
 	ds := base.NewDaoServant()
 	// aways register servants
 	api.RegisterAdminServant(e, newAdminSrv(ds, _wc))
+	api.RegisterAfdianCallbackServant(e, newAfdianSrv(ds))
 	api.RegisterCoreServant(e, newCoreSrv(ds, _oss, _wc))
 	api.RegisterRelaxServant(e, newRelaxSrv(ds, _wc), newRelaxChain())
 	api.RegisterLooseServant(e, newLooseSrv(ds, _ac))
